@@ -33,19 +33,19 @@ let nav_li
  * 
 */
 
-// function for calculating how much distance between the element and top of the viewport
-function caculateTop(element) {
-    return element.getBoundingClientRect().y
-}
-
-// function for removing active class from all sections except the one insight
-function removeActiveExcept(index) {
-    sections.forEach((sec, i) => {
-        if (i !== index) {
-            sec.classList.remove('active-class')
+    // function for calculating how much distance between the element and top of the viewport
+        function caculateTop(element) {
+            return element.getBoundingClientRect().y
         }
-    })
-}
+
+    // function for removing active class from all sections except the one insight
+        function removeActiveExcept(index) {
+            sections.forEach((sec, i) => {
+                if (i !== index) {
+                    sec.classList.remove('active-class')
+                }
+            })
+        }
 
 /**
  * End Helper Functions
@@ -55,19 +55,42 @@ function removeActiveExcept(index) {
 
 // build the nav
 
+
+
+//making the side menu
+    const menu = document.createElement('span')
+    menu.setAttribute('style', 'cursor:pointer;')
+    // styling the side menu button
+
+        for (let i = 0; i < 3; i++) {
+            const arrow = document.createElement('span')
+            arrow.textContent = '-'
+            arrow.classList.add('arrow')
+            menu.appendChild(arrow)
+        }
+
+    //adding it to the DOM . it looks good in the page i swear
+
+        nav_ul.append(menu)
+
+
+
+
+
+
+
 //making the li items
 
     //adding the sections dynamically to the ul
-    for (let i = 1; i < 5; i++) {
-        
-        const li = document.createElement('li')
-        li.textContent = `section ${i}`
-        nav_ul.appendChild(li)
-    }
+
+        for (let i = 1; i < 5; i++) {
+            
+            const li = document.createElement('li')
+            li.textContent = `section ${i}`
+            nav_ul.appendChild(li)
+        }
 
     nav_li = document.querySelectorAll('#navbar__list li')
-
-
 
 
 
@@ -82,18 +105,8 @@ function removeActiveExcept(index) {
 
 // Build menu 
 
-    //making the side menu
-        const menu = document.createElement('span')
-        menu.setAttribute('style', 'cursor:pointer;')
-        // styling the side menu button
-        for (let i = 0; i < 3; i++) {
-            const arrow = document.createElement('span')
-            arrow.textContent = '-'
-            arrow.classList.add('arrow')
-            menu.appendChild(arrow)
-        }
-        //adding it to the DOM . it looks good in the page i swear
-        nav_ul.append(menu)
+    
+        
 
     /* 
         making the functionality of the side menu button 
@@ -106,24 +119,26 @@ function removeActiveExcept(index) {
 // Scroll to section on link click
 
     // Scroll to anchor ID using scrollTO event
-    nav_li.forEach((link, index) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault()
-            sections[index].scrollIntoView({
-                behavior: 'smooth'
+
+        nav_li.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                sections[index].scrollIntoView({
+                    behavior: 'smooth'
+                })
             })
         })
-    })
 
 // Set sections as active
 
     // Add class 'active' to section when near top of viewport
-    document.onscroll = () => {
-        sections.forEach((sec, index) => {
-            const distance = caculateTop(sec)
-            if (distance < 100 && distance >= -25) {
-                sec.classList.add('active-class')
-                removeActiveExcept(index)
-            }
-        })
-    }
+    
+        document.onscroll = () => {
+            sections.forEach((sec, index) => {
+                const distance = caculateTop(sec)
+                if (distance < 100 && distance >= -25) {
+                    sec.classList.add('active-class')
+                    removeActiveExcept(index)
+                }
+            })
+        }
