@@ -3,8 +3,9 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-*  1-in order to run this project you need to run the index html
-*  2-in the chrome dev menu you can select different view ports to test the responsivness of the project
+
+*  in order to run this project you need to run the index html
+*  in the chrome dev menu you can select different view ports to test the responsivness of the project
  
  
   
