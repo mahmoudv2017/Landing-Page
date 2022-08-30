@@ -39,7 +39,7 @@ let nav_li
         }
 
     // function for removing active class from all sections except the one insight
-        function removeActiveExcept(index) {
+        function removeActiveExcept(index , sections) {
             sections.forEach((sec, i) => {
                 if (i !== index) {
                     sec.classList.remove('active-class')
@@ -83,12 +83,13 @@ let nav_li
 
     //adding the sections dynamically to the ul
 
-        for (let i = 1; i < 5; i++) {
-            
-            const li = document.createElement('li')
-            li.textContent = `section ${i}`
-            nav_ul.appendChild(li)
-        }
+    sections.forEach(sec => {
+        const li = document.createElement('li')
+        li.textContent = sec.getAttribute("data-nav")
+        nav_ul.appendChild(li)
+    })
+
+    
 
     nav_li = document.querySelectorAll('#navbar__list li')
 
@@ -123,6 +124,8 @@ let nav_li
         nav_li.forEach((link, index) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault()
+              //  link.classList.add('active-class')
+                removeActiveExcept(index , nav_li)
                 sections[index].scrollIntoView({
                     behavior: 'smooth'
                 })
@@ -138,7 +141,10 @@ let nav_li
                 const distance = caculateTop(sec)
                 if (distance < 100 && distance >= -25) {
                     sec.classList.add('active-class')
-                    removeActiveExcept(index)
+                    nav_li[index].classList.add('active-class')
+                    removeActiveExcept(index , nav_li)
+                    removeActiveExcept(index , sections)
+                 
                 }
             })
         }

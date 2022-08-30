@@ -4,16 +4,23 @@
 
 * [Instructions](#instructions)
 
-*  in order to run this project you need to run the index html
-*  in the chrome dev menu you can select different view ports to test the responsivness of the project
+###### in order to run this project you need to run the index html
+###### in the chrome dev menu you can select different view ports to test the responsivness of the project
  
  
   
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Project Name
+##### Landing Project
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Project Description
+###### this project is is for a landing page with a dynamically changing navbar elemnts
+###### which used some html , css and some js
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Technologies Used
+
+###### HTML5
+###### CSS3
+###### Javascript
