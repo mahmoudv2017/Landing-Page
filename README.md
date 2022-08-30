@@ -12,12 +12,11 @@
 
 ## Instructions
 
-## Project Name
-##### Landing Project
+## Landing Project
+
 
 ## Project Description
-###### this project is is for a landing page with a dynamically changing navbar elemnts
-###### which used some html , css and some js
+###### this project is is for a landing page with a dynamically changing navbar elemnts which used some html , css and some js
 
 ## Technologies Used
 
