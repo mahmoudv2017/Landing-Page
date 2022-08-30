@@ -8,9 +8,6 @@
 ###### in the chrome dev menu you can select different view ports to test the responsivness of the project
  
  
-  
-
-## Instructions
 
 ## Landing Project
 
